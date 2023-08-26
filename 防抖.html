@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>防抖</title>
+    <style>
+        #inp{
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inp">
+    <script>
+        // let debounce = function(fn,delay){
+        //     let timeId
+        //     return function(){
+        //         if(timeId!==null){
+        //             clearTimeout(timeId)
+        //         }
+        //         timeId = setTimeout(()=>{
+        //             fn.call(this)
+        //         },delay)
+        //     }
+        // }
+
+        let inp = document.getElementById('inp')
+        let timeId
+        inp.oninput = debounce(function(){
+            console.log(this)
+        },1000)
+
+        function debounce(fn,delay){
+            let timeId 
+            return function(){
+                if(timeId!=null){
+                    clearTimeout(timeId)
+                }
+                timeId = setTimeout(() => {
+                    // console.log(this)
+                    fn.call(this)
+                },delay);
+            }
+        }
+        // inp.oninput = debounce(function() {
+        //     console.log(this)//打印this,指向window
+        // }, 500);
+ 
+        // function debounce(fn, delay) {
+        //     let t = null;
+        //     return function() {
+        //         if (t !== null) {
+        //             clearTimeout(t)
+        //         }
+        //         t = setTimeout(() => {
+        //             console.log(this)//指向input
+        //             fn();//fn的this指向window
+        //         }, delay)
+        //     }
+        // }
+    </script>
+</body>
+</html>

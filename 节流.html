@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #inp{
+            width: 100px;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="inp">
+    <script>
+        // let inp = document.getElementById('inp')
+        // let isPrintf = true
+        // inp.oninput = function(){
+        //     if(isPrintf==true){
+        //         console.log(inp.value)
+        //         isPrintf = false
+        //         setTimeout(()=>{
+        //             isPrintf = true
+        //         },3000)
+        //     }
+        // }
+
+        let throllte = function(fn,delay){
+            let timeId 
+            return function(){
+                if(timeId!==null) return
+                timeId = setTimeout(()=>{
+                    fn.call(this)
+                    timeId = null
+                },delay)
+            }
+        }
+    </script>
+</body>
+</html>

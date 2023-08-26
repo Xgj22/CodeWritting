@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style lang="scss">
+        /* @media mediatype and (media feature) */
+        .container {
+            height: calc( 100vh - 20px );
+            width: 100vw;
+            display: flex;
+            justify-content: center;
+
+            .left{
+                background-color: aqua;
+                height: 100%;
+                overflow: auto;
+                width: 240px;
+                flex-shrink: 0;
+            }
+
+            .center{
+                height: 100%;
+                overflow: auto;
+                width: 100%;
+            }
+
+            .right{
+                height: 100%;
+                overflow: auto;
+                width: 240px;
+                flex-shrink: 0;
+                background-color: aquamarine;
+            }
+
+            @media only screen and (min-width:1250px) {
+                .center {
+                    max-width: 900px;
+                }
+            }
+
+            @media only screen and (min-width:815px) and (max-width:1250px) {
+                .center {
+                    min-width :600px;
+                }
+                .right {
+                    display: none;
+                }
+            }
+
+            @media only screen and (min-width: 500px) and (max-width: 815px) {
+                .left {
+                    display: none;
+                }
+                .center {
+                    min-width: 500px;
+                }
+                .right {
+                    display: none;
+                }
+            }
+            @media only screen and (max-width: 500px) {
+                .left {
+                    display: none;
+                }
+                .center {
+                    min-width: 500px;
+                }
+                .right {
+                    display: none;
+                }
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left"></div>
+        <div class="center"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>

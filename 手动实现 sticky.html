@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            height: 6000px;
+            
+        }
+        .father{
+            position: relative;
+        }
+        .bro{
+            margin-bottom: 200px;
+        }
+        .div1{
+
+            height: 100px;
+            width: 100px;
+            background-color: #bfa;
+            
+        }
+        .aa{
+            height: 200px;
+            width: 200px;
+            background-color: pink;
+
+        }
+        .ee{
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+
+        .rr{
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="bro">aaa</div>
+        <div class="div1" id="div1">dddd</div>
+    </div>
+    <div class="aa">
+
+    </div>
+    <script>
+        window.onload = function(){
+            const div1 = document.getElementById('div1')
+            window.onscroll = function(){
+                console.log(window.innerHeight)
+                console.log('top=>',div1.getBoundingClientRect().top)
+                if(div1.getBoundingClientRect().top<=0){
+                    div1.classList.add('ee')
+                }else{
+                    div1.classList.remove('ee')
+                }
+            }
+        }
+    </script>
+</body>
+</html>

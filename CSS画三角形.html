@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .d1{
+            height: 0px;
+            width: 0px;
+            background-color: #bfa;
+            border-top: white solid 100px;
+            border-left: white solid 100px;
+            border-right: white solid 100px;
+            border-bottom: red solid 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d1">
+    </div>
+    <script>
+        const a = [
+            { name:"xgj",age: "51" },{ name:"xgj1",age: "23" },{ name:"xgj2",age: "53" },{ name:"xgj3",age: "12" },{ name:"xgj4",age: "24" },
+            { name:"xgj5",age: "33" }
+        ];
+        function sort(a) {
+            return a.sort(({age: a}, {age: b}) => a - b);
+        }
+        sort(a)
+        console.log(a)
+    </script>
+</body>
+</html>

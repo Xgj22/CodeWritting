@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* float */
+        .layout article div {
+            min-height: 100px;
+        }
+        
+        .float_left {
+            float: left;
+            width: 300px;
+            background-color: yellowgreen;
+        }
+        
+        .float_right {
+            float: right;
+            width: 300px;
+            background-color: yellowgreen;
+        }
+        
+        .float_center {
+            background-color: tomato;
+            /* overflow: hidden; */
+        }
+
+        .float_center ::after{
+            content: '';
+            clear: both;
+        }
+
+        /* position 定位布局 */
+        .layout .position div {
+            position: absolute;
+            min-height: 100px;
+        }
+        
+        .layout .position .position_left {
+            left: 0;
+            width: 300px;
+            background-color: violet;
+        }
+        
+        .layout .position .position_right {
+            right: 0;
+            width: 300px;
+            background-color: violet;
+        }
+        
+        .layout .position .position_center {
+            right: 300px;
+            left: 300px;
+            background-color: yellow
+        }
+
+    </style>
+</head>
+<body>
+    <section class="layout">
+        <article class="float">
+            <div class="float_left"></div>
+            <div class="float_right"></div>
+            <div class="float_center">
+                <h1>使用浮动实现解决三栏布局</h1>
+            </div>
+        </article>
+        <br>
+        <article class="position">
+            <div class="position_left"></div>
+            <div class="position_right"></div>
+            <div class="position_center">
+                <h1>使用绝对定位实现解决三栏布局</h1>
+            </div>
+            
+        </article>
+        <div>12333333</div>
+    </section>
+    
+    输入: gas = [1,2,3,4,5], cost = [3,4,5,1,2]
+    输出: 3
+    解释:
+    从 3 号加油站(索引为 3 处)出发，可获得 4 升汽油。此时油箱有 = 0 + 4 = 4 升汽油
+    开往 4 号加油站，此时油箱有 4 - 1 + 5 = 8 升汽油
+    开往 0 号加油站，此时油箱有 8 - 2 + 1 = 7 升汽油
+    开往 1 号加油站，此时油箱有 7 - 3 + 2 = 6 升汽油
+    开往 2 号加油站，此时油箱有 6 - 4 + 3 = 5 升汽油
+    开往 3 号加油站，你需要消耗 5 升汽油，正好足够你返回到 3 号加油站。
+    因此，3 可为起始索引
+    
+</body>
+</html>

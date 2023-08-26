@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .app{
+            height: 400px;
+            width: 400px;
+            background-color: aqua;
+            position: relative;
+            /* display: flex; */
+            /* text-align: center; */
+            /* line-height: 400px; */
+            /* align-items 是放在父元素中 */
+            /* align-items: center; */
+        }
+
+        .pp{
+            /* display: table-cell;
+            vertical-align: middle; */
+            /* position: absolute;
+            top: 50%;
+            height: 100px;
+            margin-top: -50px;
+            width: 100px;
+            background-color: pink; */
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            margin: auto;
+        }
+        .hexagon {
+            width: 100px;
+            height: 55px;
+            background-color: #f00;
+            position: relative;
+        }
+
+        .hexagon:before,
+        .hexagon:after {
+            content: "";
+            position: absolute;
+            width: 0;
+            border-left: 50px solid transparent;
+            border-right: 50px solid transparent;
+        }
+
+        .hexagon:before {
+            bottom: 100%;
+            border-bottom: 28.75px solid #f00;
+        }
+
+        .hexagon:after {
+            top: 100%;
+            /* width: 0; */
+            border-top: 28.75px solid #f00;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <div class="pp">我是p元素</div>
+    </div>
+    <div class="hexagon"></div>
+</body>
+</html>
