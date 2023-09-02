@@ -11,9 +11,12 @@ console.log(arr.constructor===Array)
 console.log(arr.constructor.toString().indexOf('Array')!=-1)
 
 console.log(arr instanceof Array)
+console.log('=>',arr instanceof Object)
 
 console.log('==>',typeof arr)
 console.log('===>',typeof fun)
+console.log(typeof new Date())
+console.log(typeof Symbol())
 
 console.log(fun instanceof Function)
 console.log(fun.constructor===Function)

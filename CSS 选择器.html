@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 交集选择器，同时选中 a b 而不单独选中 a 或 b */
+        .a.b{
+            height: 100px;
+            width: 100px;
+            background-color: aqua;
+        }
+
+        /* 兄弟选择器 */
+        .a + p {
+            height: 100px;
+            width: 100px;
+            background-color: aquamarine;
+        }
+
+        /* 后代选择器 */
+        .aa ~ p {
+            height: 100px;
+            width: 100px;
+            background-color:cornflowerblue;
+        }
+    </style>
+</head>
+<body>
+    <div class="a b">111</div>
+    <div class="a">
+        <div class="aa"></div>
+        <p>qqq</p>
+        <p>www</p>
+        <p>sss</p>
+        222
+    </div>
+    <p>
+        oooooooo
+    </p>
+    <div class="b">3333</div>
+</body>
+</html>
